@@ -11,7 +11,7 @@ if (page === 'sobre') {
 return (
 <View style={styles.container}>
 <Text style={styles.title}>Destino Certo</Text>
-<Text style={styles.descricao}>Explore o mundo ao seu redor com o nosso aplicativo</Text>
+<Text style={styles.descricao}>Explore o muxxxxxxndo ao seu redor com o nosso aplicativo</Text>
 <View>
       <Image source={imagem} style={{ width: 400, height: 400 }} />
     </View>
