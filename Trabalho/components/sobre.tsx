@@ -16,7 +16,7 @@ return (
       <Image source={imagem} style={{ width: 400, height: 400 }} />
     </View>
 <TouchableOpacity style={styles.button} onPress={() => setPage('home')}>
-<Text style={styles.buttonText}>Entrar</Text>
+<Text style={styles.buttonText}>Entar</Text>
 </TouchableOpacity>
 </View>
 );} else if (page === 'home') {
