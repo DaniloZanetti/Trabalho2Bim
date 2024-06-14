@@ -1,26 +1,30 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Image  } from 'react-native';
+import imagem from '../assets/images/imagem1.png';
 import Sobre from './sobre';
-
+ 
 export default function App() {
 const [page, setPage] = React.useState('home');
-
+ 
 const renderPage = () => {
 if (page === 'home') {
 return (
 <View style={styles.container}>
-<Text style={styles.title}>Página sobre</Text>
-<Text style={styles.title}>Exemplo 1</Text>
+<Text style={styles.title}>Destino Certo</Text>
+<Text style={styles.descricao}>Explore o mundo ao seu redor com o nosso aplicativo</Text>
+<View>
+      <Image source={imagem} style={{ width: 400, height: 400 }} />
+    </View>
 <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
-<Text style={styles.buttonText}>Clique aqui</Text>
+<Text style={styles.buttonText}>Entrar</Text>
 </TouchableOpacity>
 </View>
 );} else if (page === 'sobre') {
     return <Sobre />;
 }
-
+ 
 };
-
+ 
 return <View style={styles.container}>{renderPage()}</View>;
 }
 const styles = StyleSheet.create({
@@ -30,22 +34,33 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#fff',
         },
-
+ 
+        descricao:{
+            textAlign: 'center',
+            fontSize: 24,
+            fontWeight: 'regular',
+            color: '#313131',
+            marginBottom: 20,
+        },
+ 
         title: {
-        fontSize: 24,
+        fontSize: 35,
         fontWeight: 'bold',
-        color: '#000',
+        color: '#5B91FF',
         marginBottom: 20,
         },
-
+ 
         button: {
-        backgroundColor: '#007BFF',
-        padding: 10,
-        borderRadius: 5,
+        backgroundColor: '#5B91FF',
+        width: 200,
+        padding: 8,
+        borderRadius: 30,
         },
-
+ 
         buttonText: {
+        textAlign: 'center',
         color: '#FFFFFF',
-        fontSize: 16,
+        fontSize: 20,
+       
         },
 })
