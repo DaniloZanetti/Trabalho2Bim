@@ -1,39 +1,45 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import imagem from '../assets/images/icon.png';
 import Home from './home';
  
 export default function App() {
 const [page, setPage] = React.useState('sobre');
- 
+const image = { uri: "../assets/images/background.png" };
+        
 const renderPage = () => {
 if (page === 'sobre') {
 return (
 <View style={styles.container}>
-<Text style={styles.titleprincipal}>Localização Atual</Text>
-
-<View>
-      <Image source={imagem} style={{ width: 400, height: 400 }} />
+    <ImageBackground source={image} style={styles.container}>
+    <View>
+      <Image source={imagem} style={{ width: 58, height: 87 }} />
     </View>
-
-
+    
+<Text style={styles.titleprincipal}>Localização Atual</Text>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
     <Text style={styles.title}>Latitude: 0.0</Text>
     <Text style={styles.title}>Latitude: 0.0</Text>
 
-<View style={styles.container1}>
-
+    </ImageBackground>      
     <TouchableOpacity style={[styles.buttonobter, { alignSelf: 'flex-start' }]}>
 <Text style={styles.buttonTextobter}>Obter</Text>
 </TouchableOpacity>
 
-</View>
 
 
 <TouchableOpacity style={styles.button} onPress={() => setPage('home')}>
 <Text style={styles.buttonText}>Voltar</Text>
 </TouchableOpacity>
+
 </View>
-);} else if (page === 'home') {
+
+);
+} else if (page === 'home') {
     return <Home />;
 }
  
@@ -50,9 +56,9 @@ const styles = StyleSheet.create({
         },
 
         titleprincipal:{
-            fontSize: 35,
-            fontWeight: 'bold',
-            color: '#5B91FF',
+            fontSize: 36,
+            textDecorationLine: 'underline',
+            color: '#FFF',
             
         },
  
